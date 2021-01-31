@@ -1,0 +1,17 @@
+Package: shinyLua
+Type: Package
+Title: Enhance 'Shiny' UIs with Lua
+Version: 0.1.0
+Authors@R: c(person("Alex", "Kraieski", email = "arkraieski@gmail.com",
+  role = c("aut", "cre")),
+   person("Fengari Contributors", role = c("ctb", "cph"),
+      comment = "fengari-web library"))
+Description: Customize and enhance Shiny apps with Lua scripts that run in 
+    the user's browser using 'fengari', a JavaScript port of the Lua VM. 
+    JavaScript objects and functions (including Shiny's JavaScript functions) 
+    can be seamlessly used from Lua to manipulate the webpage and communicate with R.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
+Imports: shiny
