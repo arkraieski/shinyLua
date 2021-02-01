@@ -1,4 +1,4 @@
-#' Add Lua scripting capability to the UI of a Shiny app
+#' Embed the Lua VM in the UI of a Shiny app
 #'
 #' @description This is a setup function that must be called from a Shiny app's UI to
 #' add the Lua implementation required for other \code{shinyLua} functions to work.
@@ -21,8 +21,10 @@ useLuaVM <- function(rmd = FALSE){
 
   # don't put the script/library inside HTML head if using with R Markdown
   if(isTRUE(rmd)){
-    tags$script(src = "fengari-web.js")
+    paste(tags$script(src = "lib/fengari-web.js"),
+          luaScript(src = "lib/init.lua"), sep = "\n")
   } else{
-    tags$head(tags$script(src = "lib/fengari-web.js"))
+    tags$head(tags$script(src = "lib/fengari-web.js"),
+              luaScript(src = "lib/init.lua"))
   }
 }
